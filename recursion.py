@@ -8,3 +8,13 @@ def sum_to_one(n):
 
 
 print(sum_to_one(7))
+
+
+# factorial
+def factorial(n):
+    if n < 2:
+        return 1
+    return n * factorial(n - 1)
+
+
+print(factorial(12))

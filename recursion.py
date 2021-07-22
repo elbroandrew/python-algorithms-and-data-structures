@@ -18,3 +18,21 @@ def factorial(n):
 
 
 print(factorial(12))
+
+
+# flatten a list
+def flatten(my_list):
+    result = []
+    for element in my_list:
+        if isinstance(element, list):
+            flat_list = flatten(element)
+            result += flat_list
+        else:
+            result.append(element)
+
+    print(result)
+    return result
+
+
+planets = ['mercury', 'venus', ['earth'], 'mars', [['jupiter', 'saturn']], 'uranus', ['neptune', 'pluto']]
+flatten(planets)

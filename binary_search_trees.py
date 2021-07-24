@@ -10,6 +10,15 @@ def build_bst(my_list):
     print(f"Middle index: {middle_idx}")
     print("Middle value: " + str(middle_value))
 
+    # создаю ноду дерева с срединным значением
+    tree_node = {"data" : middle_value}
+
+    # создаю левую и правую ноды рекурсивно
+    tree_node["left_child"] = build_bst(my_list[:middle_idx])  # исключает середину
+    tree_node["right_child"] = build_bst(my_list[middle_idx + 1:])  # исключает середину
+
+    return tree_node
+
 
 # только сортированный массив использую
 sorted_list = [12, 13, 14, 15, 16]

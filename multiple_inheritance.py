@@ -18,12 +18,22 @@ class Fish():
 
 # multiple inheritance
 
+# 1 способ
+# class ColoredFish(Fish, Color):
+#     def __init__(self, name, color):
+#         Fish.__init__(self, name)
+#         Color.__init__(self, color)
+
+# colored_fish = ColoredFish("woopsy", "green")
+# colored_fish.print_color()
+# colored_fish.get_name()
+
+# 2 способ c super()
 class ColoredFish(Fish, Color):
     def __init__(self, name, color):
-        Fish.__init__(self, name)
-        Color.__init__(self, color)
+        super().__init__(name)
+        super(Fish, self).__init__(color)
 
 colored_fish = ColoredFish("woopsy", "green")
 colored_fish.print_color()
 colored_fish.get_name()
-

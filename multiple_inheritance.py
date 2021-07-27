@@ -29,6 +29,17 @@ class Fish():
 # colored_fish.get_name()
 
 # 2 способ c super()
+'''
+каждый следующий класс делегируется другому 
+
+class Combined(First, Second, Third):
+    def __init__(self):
+        super().__init__()
+        super(First, self).__init__()
+        super(Second, self).__init__()
+
+и так дальше.
+'''
 class ColoredFish(Fish, Color):
     def __init__(self, name, color):
         super().__init__(name)

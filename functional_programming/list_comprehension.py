@@ -5,7 +5,7 @@ for x in range(5, 10):
         x *= 2
 
 '''приводится к виду
-[statement FOR var IN iterable IF pradicate]
+[statement FOR var IN iterable IF predicate]
 '''
 print([x * 2 for x in range(5, 10) if x % 2 == 0])
 

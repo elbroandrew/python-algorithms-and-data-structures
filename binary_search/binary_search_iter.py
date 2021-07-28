@@ -1,7 +1,7 @@
 '''только для сортированного массива'''
 
 # iterative solution
-
+# Time O(logN)
 arr = [1,3,5,7,8,9,10,15,22,34,56,67,78,89,100]
 
 def bs_iter(arr, num):

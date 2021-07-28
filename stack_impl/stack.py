@@ -8,7 +8,7 @@ class Stack():
     def pop(self):
         return self.items.pop()
     
-    def peek(self):
+    def next_to_remove(self):
         if len(self.items) == 0:
             return None
         return self.items[len(self.items)-1]

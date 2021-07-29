@@ -1,3 +1,5 @@
+'''0! = 1'''
+
 def factorial(n):
     if n <= 0:
         return ValueError('Число должно быть больше нуля.')

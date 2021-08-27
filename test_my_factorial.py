@@ -1,12 +1,7 @@
-def factorial(number: int) -> int:
-    result = 1
-    for i in range(1, number+1):
-        result *= i
-
-    return result
+from my_factorial import factorial
 
 
-if __name__ == '__main__':
+def test_factorial():
     cases = [
         (0, 1),
         (4, 24),

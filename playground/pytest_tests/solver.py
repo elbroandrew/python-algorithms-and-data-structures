@@ -9,5 +9,5 @@ def square_equation_solver(a, b, c):
             (a, b, c)
         )
     ):
-        raise TypeError("Not valid type for param 'a'")
+        raise TypeError("Not valid type for param")
     print("Types are OK")

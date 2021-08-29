@@ -10,9 +10,6 @@ class TestAddCase(TestCase):
 
 class TestSquareEquationSolver(TestCase):
     def test_raises_type_error(self):
-        try:
+        with self.assertRaises(TypeError):
             square_equation_solver("", 1, 1.5)
-        except TypeError as e:
-            print("Error OK", e)
-        else:
-            self.fail("Did not raise")
+

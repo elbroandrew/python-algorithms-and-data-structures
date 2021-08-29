@@ -2,7 +2,7 @@ def add(a, b):
     return a + b
 
 
-def square_equation_solver(a, b: int, c: int) -> int:
+def square_equation_solver(a, b, c):
     if not all(
         map(
             lambda param: isinstance(param, (int, float)),

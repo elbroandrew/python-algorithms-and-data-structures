@@ -7,7 +7,12 @@ class TestAddCase(TestCase):
         result = add(1, 2)
         self.assertEqual(3, result)
 
+
 class TestSquareEquationSolver(TestCase):
     def test_raises_type_error(self):
         try:
-            square_equation_solver()
+            square_equation_solver("", 1, 1.5)
+        except TypeError as e:
+            print("Error OK", e)
+        else:
+            self.fail("Did not raise")

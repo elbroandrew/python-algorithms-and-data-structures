@@ -2,10 +2,9 @@ from unittest import TestCase
 from solver import add, square_equation_solver
 
 
-class TestAddCase(TestCase):
-    def test_ok(self):
-        result = add(1, 2)
-        self.assertEqual(3, result)
+def test_ok():
+    result = add(1, 2)
+    assert result == 3
 
 
 class TestSquareEquationSolver(TestCase):

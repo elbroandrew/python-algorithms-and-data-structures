@@ -21,4 +21,7 @@ class TestSquareEquationSolver(TestCase):
         res = square_equation_solver(0,0,1)
         self.assertEqual(res, (None, None))
 
+    def test_resolves_ok(self):
+        res = square_equation_solver(1, -3, -4)
+        self.assertEqual(res, (4, -1))
 

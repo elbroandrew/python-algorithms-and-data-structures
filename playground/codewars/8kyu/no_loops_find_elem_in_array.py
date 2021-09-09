@@ -12,8 +12,14 @@ def findElement(arr, value):
         return findElement(arr, value)
 
 
+# best solution
+def check(my_list, x):
+    return x in my_list
+
+
 def main():
     findElement(['t', 'e', 's', 't'], 'e')
+    print(check(['t', 'e', 's', 't'], 'e'))
 
 
 if __name__ == '__main__':

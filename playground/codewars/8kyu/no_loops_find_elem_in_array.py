@@ -1,6 +1,6 @@
 # recursively
 
-def findElement(arr: list, value) -> bool:
+def findElement(arr, value):
     # base case
     if len(arr) <= 0:
         print("length 0, not found")
@@ -9,11 +9,11 @@ def findElement(arr: list, value) -> bool:
         print("Found")
         return True
     else:
-        findElement(arr, value)
+        return findElement(arr, value)
 
 
 def main():
-    findElement([1,2,5,3,7,4], 0)
+    findElement(['t', 'e', 's', 't'], 'e')
 
 
 if __name__ == '__main__':

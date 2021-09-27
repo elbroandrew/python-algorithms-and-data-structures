@@ -2,8 +2,13 @@
 
 
 def usdcny(usd):
-    return f"{round(usd * 6.75, 2)} Chinese Yuan"
+    return f"{(usd * 6.75):.2f} Chinese Yuan"
 
+"""
+or
+def usdcny(usd):
+    return "{:.2f} Chinese Yuan".format(usd * 6.74)
+"""
 
 def main():
     print(usdcny(1))

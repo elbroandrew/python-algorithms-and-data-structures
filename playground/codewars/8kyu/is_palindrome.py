@@ -1,7 +1,11 @@
 def is_palindrome(s):
-    # remove whitespaces at beginning and end, or simply TRIM, and remove Capitals
+    """
+     remove whitespaces replace()
+     remove Capitals lower()
 
-    s = s.strip().lower().replace(" ", "")
+    """
+
+    s = s.lower().replace(" ", "")
     return s == s[::-1]
 
 

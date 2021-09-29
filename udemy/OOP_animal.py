@@ -1,5 +1,5 @@
 class Animal:
-    def __init__(self):
+    def __init__(self, fur):
         print('Animal created!')
 
     def report(self):
@@ -11,8 +11,8 @@ class Animal:
 
 class Dog(Animal):
 
-    def __init__(self):
-        Animal.__init__(self) #creates Animal instance
+    def __init__(self, fur):
+        Animal.__init__(self, fur) #creates Animal instance
         print("Dog created")
 
     def report(self):
@@ -20,5 +20,5 @@ class Dog(Animal):
 
 
 if __name__ == '__main__':
-    dog = Dog()
+    dog = Dog("Fur")
     dog.report()

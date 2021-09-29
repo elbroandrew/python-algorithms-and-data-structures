@@ -15,7 +15,10 @@ class Dog(Animal):
         Animal.__init__(self) #creates Animal instance
         print("Dog created")
 
+    def report(self):
+        print("Dog")
+
 
 if __name__ == '__main__':
     dog = Dog()
-    dog.woof()
+    dog.report()

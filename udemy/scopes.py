@@ -19,7 +19,7 @@ def local_example():
 
 # ENCLOSING - ф-ия возвпащает ф-ию
 def enclosing():
-    x = 'Enclosing level'  #несмотря на shadowing вернет Х enclosed, если Х закоментить - будет искать в Global scope, если там тоже нет ничего - в Built In
+    x = 'Enclosing level'  # несмотря на shadowing вернет Х enclosed, если Х закоментить - будет искать в Global scope, если там тоже нет ничего - в Built In
 
     def inside():
         print(x)
@@ -27,6 +27,20 @@ def enclosing():
     inside()
 
 
+# не используй Built in часто, и оно создается при запуске программы.
+
+# global - позволяет переопределить глобальную переменную изнутри ф-ии:
+
+y = 'глобальная переменная'
+
+
+def report():
+    global y
+    y = 'теперь её изменили'
+    print(y)
+
+
 if __name__ == '__main__':
-    enclosing()
-    print(x)
+    print(y)
+    report()
+    print(y)

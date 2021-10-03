@@ -1,15 +1,13 @@
-def hello(name="Andrew"):
-    print('the hello function has been run')
+def new_decorator(func):
 
-    def greet():
-        return "   This is inside the greet()"
+    def wrap_func():
+        print("some code before executing func")
+        func()
+        print("some code after executing func")
 
-    def welcome():
-        return "   This is inside welcome func"
-
-    print(greet())
-    print(welcome())
+    return wrap_func
 
 
 if __name__ == '__main__':
-    hello()
+    x = hello()
+    print(x())

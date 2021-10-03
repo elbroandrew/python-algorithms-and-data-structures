@@ -8,13 +8,10 @@ def new_decorator(func):
     return wrap_func
 
 
+@new_decorator # то же, что и  func_needs_decorator = new_decorator(func_needs_decorator)
 def func_needs_decorator():
     print("decorate me")
 
 
-func_needs_decorator()
-
-
 if __name__ == '__main__':
-    func_needs_decorator = new_decorator(func_needs_decorator)
     func_needs_decorator()

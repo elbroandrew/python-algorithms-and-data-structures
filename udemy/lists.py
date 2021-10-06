@@ -7,3 +7,4 @@ print(list1)
 """ insert """
 list1.insert(2, 'Hi!')
 print(list1)
+

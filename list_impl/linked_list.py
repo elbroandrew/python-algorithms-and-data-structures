@@ -33,7 +33,7 @@ class LinkedList:
                 current_index += 1
             return node.value
 
-    def insert(self, node: Node):
+    def insert(self, node: Node, index=0):
         #TOOD: insert at index, etc
         self.count += 1
         self.head.next_node = node

@@ -1,4 +1,4 @@
-class Stack():
+class Stack:
     def __init__(self):
         self.items = []
 
@@ -8,7 +8,7 @@ class Stack():
     def pop(self):
         return self.items.pop()
     
-    def next_to_remove(self):
+    def top(self):
         if len(self.items) == 0:
             return None
         return self.items[len(self.items)-1]
@@ -16,7 +16,7 @@ class Stack():
     def getSize(self):
         return len(self.items)
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return len(self.items) == 0
 
     

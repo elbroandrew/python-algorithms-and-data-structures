@@ -8,7 +8,7 @@ def main():
     list1 = LinkedList(node1)
     list1.insert(node2)
 
-    print(list1.node.next_node.value)
+    print(list1.get_size())
 
 
 if __name__ == '__main__':

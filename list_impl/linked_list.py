@@ -1,25 +1,43 @@
 class Node:
     def __init__(self, value, next_node=None):
+        self.index = 0
         self.value = value
         self.next_node = next_node
 
 
 class LinkedList:
-    def __init__(self, node=None):
-        self.node = node
+    def __init__(self, head=None):
+        self.head = head
+        self.count = 0
+        if head is not None:
+            self.count = 1
 
-    def get_size(self):
-        count = 0
-        node = self.node
+    def print_list(self):
+        node = self.head
         while node is not None:
-            count += 1
+            print(node)
             node = node.next_node
 
-        return count
 
+    def get_size(self):
+        return self.count
+
+    def index(self, index):
+        if self.head is None:
+            return f"List is empty"
+        else:
+            node = self.head
+            current_index = 0
+            while current_index != index:
+                node = node.next_node
+                current_index += 1
+            return node.value
 
     def insert(self, node: Node):
-        self.node.next_node = node
+        #TOOD: insert at index, etc
+        self.count += 1
+        self.head.next_node = node
 
     def erase(self):
-        self.node = None
+        self.count = 0
+        self.head = None

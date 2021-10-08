@@ -1,4 +1,5 @@
 from stack import Stack
+import pytest
 
 """ 
 необходимо определить сбалансированную последовательность и вернуть true, а именно:
@@ -34,16 +35,21 @@ def is_balanced(s: str) -> bool:
     return st.is_empty()
 
 
-def main():
+entries = [('()[{([]())}]', True),
+           ('[{]}', False),
+           ('(()', False),
+           ('}{', False),
+           ("", True)]
 
-    entries = ['()[{([]())}]',
-               '[{]}',
-               '(()',
-               '}{',
-               ""]
 
+@pytest.mark.parametrize('a, b', entries)
+def test_balanced(a, b):
     for entry in entries:
-        print(is_balanced(entry))
+        assert is_balanced(a) == b
+
+
+def main():
+    test_balanced()
 
 
 if __name__ == '__main__':

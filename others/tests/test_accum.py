@@ -8,16 +8,13 @@ def accum():
 
 
 def test_accum_init(accum):
-    accum = Accum()
     assert accum.count == 0
 
 
-def test_accum_add_one():
-    accum = Accum()
+def test_accum_add_one(accum):
     accum.add()
     assert accum.count == 1
 
-def test_accum_add_three():
-    accum = Accum()
+def test_accum_add_three(accum):
     accum.add(3)
     assert accum.count == 3

@@ -30,8 +30,32 @@ def ex2():
     print(r.bar) # будет ошибка
 
 
+"""
+Не работает для наследования, если у родителя есть слотс. В этом случае надо ребенку тоже указать свой слотс.
+Можно не дублировать у родителя слотс, просто добавить свой.
+Пример 2.
+"""
+
+def ex3():
+    class SlotsClass:
+        __slots__ = ("foo")
+
+    class ChildSlotsClass(SlotsClass):
+        __slots__ = ("bar")
+
+    s = ChildSlotsClass()
+    s.foo = "foo"
+    s.bar = "bar"
+    s.baz = "baz"
+    print(s.foo)
+    print(s.bar)
+    print(s.baz) # ошибка
+
+
 def main():
-    ex2()
+    # ex1()
+    # ex2()
+    ex3()
 
 
 if __name__ == '__main__':

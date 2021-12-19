@@ -22,3 +22,9 @@ print(answer2)
 """
 answer3 = [x for x in range(1, 101) if x % 12 == 0]
 print(answer3)
+
+"""
+4. Given the string, create a variable called 'answer4', which is a list containing all the letters from "amazing", but not the vowels (a, e, i, o, and u). The answer should look like: ['m', 'z', 'n', 'g'].
+"""
+answer4 = [x for x in "amazing" if x not in "aeiou"]
+print(answer4)

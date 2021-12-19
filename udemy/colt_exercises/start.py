@@ -16,3 +16,9 @@ print(answer)
 words = ["Elie", "Tim", "Matt"]
 answer2 = [x[::-1].lower() for x in words]
 print(answer2)
+
+"""
+3. For all the numbers between 1 and 100 (including 100), create a variable called 'answer3', which contains a list with all the numbers that are divisible by 12: (12, 24, etc)
+"""
+answer3 = [x for x in range(1, 101) if x % 12 == 0]
+print(answer3)

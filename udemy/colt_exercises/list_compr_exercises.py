@@ -28,3 +28,11 @@ print(answer3)
 """
 answer4 = [x for x in "amazing" if x not in "aeiou"]
 print(answer4)
+
+
+"""
+5. create [[0,1,2], [0,1,2],[0,1,2]] from ranges
+"""
+answer5 = [[i for i in range(0, 3)] for j in range(0, 3)]
+print(answer5)
+

@@ -47,7 +47,7 @@ print(a)
 # GET - получает значение по ключу, но не выкидывает KeyError, а None.
 print(d['a']) # 1
 print(d.get('a')) # 1
-print(d['no_key']) # KeyError
+#print(d['no_key']) # KeyError
 print(d.get('no_key')) # None
 
 '''
@@ -71,3 +71,26 @@ for key in lst:
 print(rez)
 {1: 4, 3: 2, 7: 3, 9: 2, 13: 1}
 '''
+
+
+# POP
+e = dict(a=1, b=2, c=3)
+e.pop('a')
+print(e)
+
+# POPITEM - removes RANDOM item
+g = dict(a=1, b=2, c=3, d=4, e=5, f=6)
+g.popitem()
+print(g)
+
+# UPDATE -- можно скопировать словарь в словарь.
+first = dict(a=1, b=2, c=3)
+second = {}
+
+second.update(first)
+print(second)
+second['a'] = 5555
+print(second)
+second.update(first)
+print(second)
+

@@ -98,3 +98,18 @@ print(second)
 numbers = dict(first=1, second=2, third=3)
 squared_numbers = {key: value ** 2 for key, value in numbers.items()}
 print(squared_numbers)
+
+# ex 1
+n = {num: num**2 for num in [2,3,4,5]}
+print(n)
+
+# ex 2 -- TWO strings into one dictionary
+str1 = 'ABC'
+str2 = "123"
+combo = {str1[i]: str2[i] for i in range(0, len(str1))} # {'A': '1', 'B': '2', 'C': '3'}
+print(combo)
+
+# ex 3 -- conditional logic
+num_list = [1,2,3,4]
+p = {num: "even" if num % 2 == 0 else "odd" for num in num_list}
+print(p)

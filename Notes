@@ -21,3 +21,4 @@ import sys
 list_comp = sys.getsizeof([x * 10 for x in range(1000)]) # 9000 bytes
 gen_exp = sys.getsizeof(x * 10 for x in range(1000))     # 88 bytes
 Можно добавить генератор к листу [1,2] + gen()
+

@@ -7,3 +7,12 @@
 Словари:
 можно создавать через dict:
 my_dict = dict(name="John")
+
+Tuples: быстрее, чем листы.
+
+*args - собирает оставшиеся параметры в тюпл.
+**kwargs - returns dictionary.
+
+Params order:
+def (a, b, *args, default="Colt", **kwargs)
+

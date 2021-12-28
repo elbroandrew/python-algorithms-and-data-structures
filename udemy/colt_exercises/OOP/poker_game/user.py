@@ -1,6 +1,10 @@
 class User:
     active_users = 0
 
+    @classmethod
+    def display_active_users(cls):
+        return cls.active_users
+
     def __init__(self, first_name: str, last_name: str, age: int):
         self.first_name = first_name
         self.last_name = last_name
@@ -21,3 +25,7 @@ class User:
 
 u = User('john', "Doe", 34)
 print(u.initials())
+
+'''class method можно вызвать 2мя способами'''
+print(u.display_active_users())
+print(User.display_active_users()) # так предпочтительнее

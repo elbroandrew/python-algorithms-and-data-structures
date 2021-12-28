@@ -5,7 +5,12 @@ class User:
     def display_active_users(cls):
         return cls.active_users
 
-    def __init__(self, first_name: str, last_name: str, age: int):
+    @classmethod
+    def from_string(cls, data_string: str):
+        first, last, age = data_string.split(',')
+        return cls(first, last, age)
+
+    def __init__(self, first_name: str, last_name: str, age):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -29,3 +34,7 @@ print(u.initials())
 '''class method можно вызвать 2мя способами'''
 print(u.display_active_users())
 print(User.display_active_users()) # так предпочтительнее
+
+
+tom = User.from_string('tom,smith,12')
+print(tom.age)

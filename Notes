@@ -42,5 +42,8 @@ n(next line)
 p(print)
 c(continue - finishes debugging)
 
+В пайтоне можно в одну строку написать, только нужно семиколон:
+import pdb; pdb.set_trace()
+
 
 

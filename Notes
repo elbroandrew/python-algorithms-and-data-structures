@@ -61,3 +61,6 @@ p.__name # ERROR, потому что за кулисами пайтон мен�
 чтоб увидеть пишу print(dir(p)).
 
 
+@property
+In Python, property() is a built-in function that creates and returns a property object. The syntax of this function is:
+property(fget=None, fset=None, fdel=None, doc=None)

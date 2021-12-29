@@ -17,11 +17,11 @@ class Mine(object):
 
 type(Mine.x)  # property
 mine = Mine()
-mine.x()  # None
+mine.x  # None
 mine.x = 3
-mine.x()  # 3
+mine.x  # 3
 del mine.x
-mine.x()  # None
+mine.x  # None
 
 
 '''верхний вариант можно заменить ДЕКОРАТОРАМИ'''
@@ -39,6 +39,14 @@ class Mine2(object):
         """Это свойство x."""
         return self._x
 
+    '''
+    или так можно
+    @property
+    def x(self):
+        return self._x
+        
+    '''
+
     @x.setter
     def x(self, value):
         self._x = value
@@ -46,3 +54,10 @@ class Mine2(object):
     @x.deleter
     def x(self):
         self._x = None
+
+c = Mine2()
+print(c.x)
+c.x = 5
+print(c.x)
+del c.x
+print(c.x)

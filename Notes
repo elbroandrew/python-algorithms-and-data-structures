@@ -91,5 +91,7 @@ a - append to the end
 r+ - read and write based on cursor position
 
 Чтение CSV.
-reader - lets you iterate over rows as lists.
-DictReader - lets you iterate over rows as OrderedDicts.
+reader - строки как листы будут.
+DictReader - строки как словарь будут.
+у ридеров можно задать делиметр, по дефолту - это запятая.
+

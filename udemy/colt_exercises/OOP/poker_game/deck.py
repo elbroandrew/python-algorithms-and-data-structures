@@ -14,6 +14,16 @@ class Deck:
     def __repr__(self):
         return f"Deck of {self.count()} cards."
 
+    # custom iterator
+    def __iter__(self):
+        return iter(self.cards)
+    # OR with generator below:
+    '''
+    def __iter__(self):
+        for card in self.cards:
+            yield card
+    '''
+
     def _deal(self, num):
         count = self.count()
         actual = min([count, num])

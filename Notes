@@ -85,6 +85,11 @@ with open("text.txt") as f:
     f.read()
 И вот это with это вызов дандер метода file.__enter__() и потом закрытие file.__exit__().
 When open a file"
-r - read (by default)
+r - read (no writings) (by default)
 w - write and overwrite
-a - append to the end.
+a - append to the end
+r+ - read and write based on cursor position
+
+Чтение CSV.
+reader - lets you iterate over rows as lists.
+DictReader - lets you iterate over rows as OrderedDicts.

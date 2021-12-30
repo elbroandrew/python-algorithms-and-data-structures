@@ -66,3 +66,10 @@ In Python, property() is a built-in function that creates and returns a property
 property(fget=None, fset=None, fdel=None, doc=None). Смотри файл специальный.
 
 print(c.__dict__) - возвращает класс в виде словаря.
+
+
+'''class method можно вызвать 2мя способами'''
+u = User()
+print(u.display_active_users())
+print(User.display_active_users()) # так предпочтительнее
+

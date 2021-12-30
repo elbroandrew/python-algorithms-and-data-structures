@@ -29,12 +29,5 @@ class User:
 
 
 u = User('john', "Doe", 34)
-print(u.initials())
-
-'''class method можно вызвать 2мя способами'''
-print(u.display_active_users())
-print(User.display_active_users()) # так предпочтительнее
-
 
 tom = User.from_string('tom,smith,12')
-print(tom.age)

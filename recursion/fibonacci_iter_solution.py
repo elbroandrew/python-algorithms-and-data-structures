@@ -29,7 +29,7 @@ def fib_without_array(n):
 test = fib_without_array(7)
 
 
-# fib colt variant
+# fib colt variant  (~500 MB памяти сожрет при 1000000)
 def fib_list(max_num):
     nums = []
     a, b = 0, 1
@@ -38,7 +38,7 @@ def fib_list(max_num):
         a, b = b, a + b
     return nums
 
-# with generator
+# with generator (а тут ~ 5 MB)
 def fib_gen(max_num):
     x = 0
     y = 1

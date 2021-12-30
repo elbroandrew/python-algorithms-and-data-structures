@@ -1,15 +1,17 @@
-class Pet:
+class Animal:
     allowed = ['cat', 'dog', 'fish', 'parrot']
-
-
     def __init__(self, name, species):
-        if species not in Pet.allowed:
+        if species not in Animal.allowed:
             raise ValueError(f"You cant have a {species} pet!")
         self.name = name
         self.species = species
 
 
-p = Pet('Tiger', 'cat')
-print(id(Pet.allowed))
+p = Animal('Tiger', 'cat')
+print(id(Animal.allowed))
 
 
+class Cat(Animal):
+    def __init__(self, name, species, color):
+        Animal.__init__(self, name, species)
+        self.color = color

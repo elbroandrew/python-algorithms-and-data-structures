@@ -84,3 +84,7 @@ file.close()
 with open("text.txt") as f:
     f.read()
 И вот это with это вызов дандер метода file.__enter__() и потом закрытие file.__exit__().
+When open a file"
+r - read (by default)
+w - write and overwrite
+a - append to the end.

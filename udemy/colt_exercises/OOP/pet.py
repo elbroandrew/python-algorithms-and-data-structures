@@ -13,5 +13,5 @@ print(id(Animal.allowed))
 
 class Cat(Animal):
     def __init__(self, name, species, color):
-        Animal.__init__(self, name, species)
+        super().__init__(name, species)
         self.color = color

@@ -9,7 +9,6 @@ def iterative_fib(n):
 
 
 res = iterative_fib(7)
-print(res)
 
 
 # iterative w/o an array
@@ -28,4 +27,29 @@ def fib_without_array(n):
     return c
 
 test = fib_without_array(7)
-print(test)
+
+
+# fib colt variant
+def fib_list(max_num):
+    nums = []
+    a, b = 0, 1
+    while len(nums) < max_num:
+        nums.append(b)
+        a, b = b, a + b
+    return nums
+
+# with generator
+def fib_gen(max_num):
+    x = 0
+    y = 1
+    count = 0
+    while count < max_num:
+        x, y = y, x + y
+        yield x
+        count += 1
+
+for n in fib_gen(10):
+    print(n)
+
+
+

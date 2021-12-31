@@ -3,7 +3,7 @@ conn = sqlite3.connect("user.db")
 
 user = input("Please, enter your name...")
 password = input("Please, enter your password...")
-query = f"SELECT * FROM users WHERE username='{user}' AND password='{password}'"
+query = f"SELECT * FROM users WHERE username='{user}' AND password='' OR 1=1 --'"
 
 cursor = conn.cursor()
 cursor.execute(query)

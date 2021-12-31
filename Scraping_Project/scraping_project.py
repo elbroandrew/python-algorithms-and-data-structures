@@ -11,7 +11,9 @@ for book in books:
     title = book.find("h3").find("a")["title"]
     price = book.select(".price_color")[0].get_text()
     price = float(price.replace("£", "").replace("Â", ""))
-    print(price)
+    paragraph = book.select(".star-rating")[0]
+    rating = paragraph.get_attribute_list("class")[-1]
+    print(rating)
 
 # INIT BS4
 # EXTRACT DATA

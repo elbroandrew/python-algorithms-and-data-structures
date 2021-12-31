@@ -13,9 +13,8 @@ c = conn.cursor()
 # query = f"INSERT INTO friends (first_name) VALUES ('{form_first}')"
 
 # BETTER WAY
-form_first = "John"
-query = f"INSERT INTO friends (first_name) VALUES (?)"
-
-c.execute(query, (form_first,) ) # add tuple
+data = ("Sarah", "Connor", 25)
+query = "INSERT INTO friends VALUES (?, ?, ?)"
+c.execute(query, data) # add tuple
 conn.commit()
 conn.close()

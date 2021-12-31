@@ -1,15 +1,18 @@
 import sqlite3
 conn = sqlite3.connect("user.db")
 
+user = input("Please, enter your name...")
+password = input("Please, enter your password...")
+query = f"SELECT * FROM users WHERE username='{user}' AND password='{password}'"
+
 cursor = conn.cursor()
+cursor.execute(query)
 
-list_of_users = [
-    ("John", "123"),
-    ("Sarah", "555"),
-    ("Terminator", "800")
-]
-
-cursor.executemany("INSERT INTO users VALUES (?, ?)", list_of_users)
+result = cursor.fetchone()
+if result:
+    print("WELCOME BACK")
+else:
+    print("FAILED LOGIN")
 
 conn.commit()
 conn.close()

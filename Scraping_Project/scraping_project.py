@@ -7,7 +7,12 @@ url = "https://books.toscrape.com/catalogue/category/books/history_32/index.html
 response = requests.get(url)
 soup = BeautifulSoup(response.text, "html.parser")
 books = soup.find_all("article")
-print(books)
+for book in books:
+    title = book.find("h3").find("a")["title"]
+    price = book.select(".price_color")[0].get_text()
+    price = float(price.replace("£", "").replace("Â", ""))
+    print(price)
+
 # INIT BS4
 # EXTRACT DATA
 # SAVE TO DB

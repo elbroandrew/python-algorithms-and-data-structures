@@ -3,18 +3,14 @@ conn = sqlite3.connect("my_friends.db") # create db
 # create cursor object
 c = conn.cursor()
 
-# execute some sql
-# c.execute("CREATE TABLE friends (first_name TEXT, last_name TEXT, closeness INTEGER);")
-# insert_query = '''insert into friends
-#                     values ('Marry', 'Lewis', 7)'''
+people = [
+    ("Roland", "Amundsen", 5),
+    ("Rosa", "Perks", 3),
+    ("Neil", "Armstrong", 5),
+    ("Henry", "Hudson", 2)
+]
 
-# BAD WAY !
-# form_first = "Dana"
-# query = f"INSERT INTO friends (first_name) VALUES ('{form_first}')"
+c.executemany("INSERT INTO friends VALUES (?, ?, ?)", people)
 
-# BETTER WAY
-data = ("Sarah", "Connor", 25)
-query = "INSERT INTO friends VALUES (?, ?, ?)"
-c.execute(query, data) # add tuple
 conn.commit()
 conn.close()

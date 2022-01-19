@@ -14,27 +14,32 @@ from typing import List
 
 
 def rotate_matrix(matrix: List) -> List:
-    if len(matrix) <= 1:
+    if len(matrix) < 4:
         return matrix
     else:
-        # 0 FIND NUMBERS OF ROWS
+        # 0 check if length is a perfect square (our matrix cannot be size of 5, 8, ...)
+        length = len(matrix)
+        root = math.sqrt(length)
+        if int(root + 0.5) ** 2 != length:
+            print("The matrix dimension should be a square.")
+            return matrix
+
+        # 1 FIND NUMBERS OF ROWS
         rows_num = int(math.sqrt(len(matrix)))
 
-        # 1 CREATE ROWS LISTS (SLICE BASE MATRIX INTO 2D LIST)
+        # 2 CREATE ROWS LISTS (SLICE BASE MATRIX INTO 2D LIST)
         list_2d = [matrix[x: x + rows_num] for x in range(0, len(matrix), rows_num)]
 
-        # 2 ROTATE MATRIX
+        # 3 ROTATE MATRIX
         rotated = [[] for x in range(0, rows_num)]
 
         for x1 in range(0, len(list_2d)):
             for x2 in range(0, rows_num):
                 rotated[len(list_2d) - x1 - 1].append(list_2d[x2][x1])
 
-        # 3 FLATTEN LISTS
+        # 4 FLATTEN LISTS
         print([item for sublist in rotated for item in sublist])
         return [item for sublist in rotated for item in sublist]
-
-
 
 
 def main():

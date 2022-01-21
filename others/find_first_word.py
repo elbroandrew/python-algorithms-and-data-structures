@@ -35,5 +35,14 @@ def first_word(text: str) -> str:
     return text[:index] if index != -1 else text
 
 
+# solution 3
+def first_word_3(text):
+    try:
+        index = text.index(" ")
+        return text[:index]
+    except ValueError:
+        return text
+
+
 if __name__ == '__main__':
     main()

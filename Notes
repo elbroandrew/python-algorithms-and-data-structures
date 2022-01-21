@@ -97,3 +97,6 @@ DictReader - строки как словарь будут.
 
 Проверить, можно ли скрапить сайт вписать после него /robots.txt
 он выдаст DISALLOWED для всех роутов, например. И агентов покажет каким можно доверять.
+
+== vs is operators
+== compares two variables based on their actual value. In contrast, the is operator compares two variables based on the object id

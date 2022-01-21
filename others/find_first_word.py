@@ -17,13 +17,22 @@ def main():
         "hello",
         "hi"
     ]
-
+    # for first solution
     for string, answer in zip(strings, answers):
         print(f"{find_word(string)} == {answer}")
         assert find_word(string) == answer
 
+    # for second solution
+    for string, answer in zip(strings, answers):
+        print(f"{first_word(string)} == {answer}")
+        assert first_word(string) == answer
 
-# better solution
+
+# better and quicker solution
+
+def first_word(text: str) -> str:
+    index: int = text.find(" ")
+    return text[:index] if index != -1 else text
 
 
 if __name__ == '__main__':

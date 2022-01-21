@@ -100,3 +100,29 @@ DictReader - строки как словарь будут.
 
 == vs is operators
 == compares two variables based on their actual value. In contrast, the is operator compares two variables based on the object id
+
+int  - это type hint
+my_int: int = "a string"
+можно так сделать, IDE ругнется только и всё, но сработает.
+print(my_int) # -> a string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

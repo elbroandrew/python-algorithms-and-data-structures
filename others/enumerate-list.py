@@ -10,3 +10,5 @@ for i in enumerate(a):
 (2, 23)
 ...
 """
+for i, x in enumerate(a):
+    print(x, i)

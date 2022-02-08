@@ -11,4 +11,4 @@ def get_file_size(file_path: str):
     return os.stat(file_path).st_size
 
 
-print(get_file_size(path))
+print(get_file_size("C:"))

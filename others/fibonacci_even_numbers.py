@@ -16,11 +16,11 @@ def fib_even_numbers(n: int):
             yield a
             a, b = b, a + b
 
-    x = fib()
+    gen = fib()
     while n > 0:
-        z = next(x)
-        if z % 2 == 0:
-            result.append(z)
+        num = next(gen)
+        if num % 2 == 0:
+            result.append(num)
             n -= 1
 
     return result

@@ -29,6 +29,13 @@ class CreateDict(unittest.TestCase):
 
         self.assertEqual(dict_from_keys_and_values(keys, values), result)
 
+    def test_len_keys_lt_values(self):
+        keys = ['one', 'two', 'three']
+        values = [1, 2, 3, 4]
+        result = dict(one=1, two=2, three=3)
+
+        self.assertEqual(dict_from_keys_and_values(keys, values), result)
+
 
 
 

@@ -12,3 +12,9 @@ for i in enumerate(a):
 """
 for i, x in enumerate(a):
     print(x, i)
+
+# можно задать стартовый индекс
+seasons = ["Summer", "Winter", "Fall", "Spring"]
+
+for count, season in enumerate(seasons, start=1):
+    print("{} - {}".format(count, season))

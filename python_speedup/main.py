@@ -12,13 +12,14 @@ texture_size = min(texture.get_size()) - 1
 texture_array = pg.surfarray.array3d(texture).astype(dtype=np.uint32)
 
 
+
 @ti.data_oriented
 class Fractal:
     def __init__(self, app):
         self.app = app
         self.screen_array = np.full((width, height, 3), [0, 0, 0], dtype=np.uint32)
         # taichi architecture, you can use ti.cpu, ti.cuda, ti.opengl, ti.vulkan, ti.metal
-        ti.init(arch=ti.vulkan)
+        ti.init(arch=ti.vulkan) # вместо вулкан cpu, opengl, cuda можно, опенгл ниже всех.
         # taichi fields
         self.screen_field = ti.Vector.field(3, ti.uint32, (width, height))
         self.texture_field = ti.Vector.field(3, ti.uint32, texture.get_size())

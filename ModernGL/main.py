@@ -1,5 +1,9 @@
 import moderngl_window as mglw
 
+"""
+pip install moderngl, moderngl_window
+и даже pandas вроде бы.
+"""
 
 class App(mglw.WindowConfig):
     window_size = 1600, 900

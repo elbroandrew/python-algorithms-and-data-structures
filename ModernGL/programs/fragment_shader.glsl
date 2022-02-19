@@ -30,7 +30,7 @@ void main()
 		float factor = (sin(time) * 0.5 + 0.5) + 0.3;
 		i += factor;
 
-		float a = i / 8;
+		float a = i / 5;
 		float dx = 2 * r * cos(a) - r * cos(2 * a);
 		float dy = 2 * r * sin(a) - r * sin(2 * a);
 		col += 0.005 * factor / length(uv - vec2(dx + 0.1, dy) - 0.01 * hash12(i));

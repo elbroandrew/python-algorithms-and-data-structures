@@ -6,7 +6,7 @@
 list1 = [2**i for i in range(1, 5)]
 
 print(list1)
-
+print(dir(list1))
 # создам класс, где поменяю индекс начала с 0 на 1
 
 class MyList():

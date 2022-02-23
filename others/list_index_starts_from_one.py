@@ -32,6 +32,12 @@ class TestMyList(unittest.TestCase):
     def test_index_zero(self):
         self.assertRaises(IndexError, lambda: self.my_list[0])
 
+    def test_negative_index(self):
+        self.assertEqual(self.my_list[-1], 16, msg="Something went wrong!")
+
+    def test_positive_index(self):
+        self.assertEqual(self.my_list[1], 2, msg="Something went wrong!")
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

@@ -16,8 +16,10 @@ class MyList():
     def __getitem__(self, key):
         if key > 0:
             return self.my_list[key - 1]
+        elif key < 0:
+            return self.my_list[key]
         else:
             raise IndexError("Out of bounds")
 
 m = MyList(list1)
-print(m[5])
+print(m[1])

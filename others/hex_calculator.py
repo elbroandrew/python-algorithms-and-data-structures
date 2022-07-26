@@ -13,10 +13,10 @@ while x > base:
     x = y
     
 
-if x in range(0, base) and len(res) != 0:
+if len(res) != 0:
     res.insert(0, str(hex[x]))
     res = ''.join(res)
     print(res)
-elif x in range(0, base):
-    print(str(hex[x]))
+else:
+  print(str(hex[x]))
     

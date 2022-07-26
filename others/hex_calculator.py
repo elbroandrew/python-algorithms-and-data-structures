@@ -5,18 +5,16 @@ for i in "ABCDEF":
 
 x = 3331
 base = 16
-t = x
-y = x
 res = ""
 
-while t > base:
-    t = t // base
-    o = y - t * base
-    y = t
-    res += str(hex[o])
+while x > base:
+    y = x // base
+    res += str(hex[x - y * base])
+    x = y
+    
 
-if y in range(0, base):
-    res += str(hex[y])
+if x in range(0, base):
+    res += str(hex[x])
 
 res = res[::-1]
 

@@ -5,17 +5,17 @@ for i in "ABCDEF":
 
 x = 3331
 base = 16
-res = ""
+res = []
 
 while x > base:
     y = x // base
-    res += str(hex[x - y * base])
+    res.insert(0, str(hex[x - y* base]))
     x = y
     
 
 if x in range(0, base):
-    res += str(hex[x])
+    res.insert(0, str(hex[x]))
 
-res = res[::-1]
+res = ''.join(res)
 
 print(res)

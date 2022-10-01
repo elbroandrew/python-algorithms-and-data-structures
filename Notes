@@ -114,7 +114,10 @@ print(my_int) # -> a string
 Наличие хотя бы одного из методов делает объект дескриптором:
 __get__, __set__, __delete__.
 
-
+Экранирование символа:
+"C\\Users\\student\\test.txt"
+или
+r1"C\Users\student\test.txt"
 
 
 

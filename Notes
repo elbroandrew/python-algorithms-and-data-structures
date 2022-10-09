@@ -119,8 +119,15 @@ __get__, __set__, __delete__.
 "C\\Users\\student\\test.txt"
 или
 r1"C\Users\student\test.txt"
-
-
+-----------------------------------
+URL в несколько строк
+url = (
+    'rthrth'
+    'wegweg'
+    'wegewg'
+    'wewegweg'
+)
+print(url) # rthrthwegwegwegewgwewegweg
 
 
 

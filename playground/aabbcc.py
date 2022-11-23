@@ -3,17 +3,19 @@
 'aabbcc', 1 => 'abc'
 """
 
-string = "aabbcc"
+string = "abcabcabc"
 
 
 def clean_string(txt, repeats):
     res_str = ""
+    chars = dict.fromkeys(set(txt), 0)
     for ch in txt:
-        if txt.count(ch) >= repeats:
+        chars[ch] += 1
+        if chars[ch] <= repeats:
             res_str += ch
 
     return res_str
 
 
-g = clean_string(string, 1)
+g = clean_string(string, 2)
 print(g)

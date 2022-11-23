@@ -7,14 +7,12 @@ string = "aabbcc"
 
 
 def clean_string(txt, repeats):
-    d = {}
+    res_str = ""
     for ch in txt:
-        if ch in d:
-            d[ch] += 1
-        else:
-            d[ch] = 1
+        if txt.count(ch) >= repeats:
+            res_str += ch
 
-    return ''.join([*filter(lambda x: d[x] >= repeats, d)]) * repeats
+    return res_str
 
 
 g = clean_string(string, 1)

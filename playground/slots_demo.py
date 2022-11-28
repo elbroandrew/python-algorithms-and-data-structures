@@ -3,12 +3,14 @@ __slots__ е позволяет объекту класса добавлять �
 хотя у объектов подкласса от этого класса уже можно менять.
 """
 
+
 class Car:
-    # __slots__ = [
-    #     "make",
-    #     "owner",
-    #     "year"
-    # ]
+    __slots__ = [
+        "make",
+        "owner",
+        "year"
+    ]
+
     def __init__(self, make):
         self.make = make
 
@@ -16,5 +18,5 @@ class Car:
 c1 = Car("nissan")
 print(c1.make)
 
-c1.color = 'red'
+c1.color = 'red' # error
 print(c1.color)

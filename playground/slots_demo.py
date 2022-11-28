@@ -4,14 +4,17 @@ __slots__ е позволяет объекту класса добавлять �
 """
 
 class Car:
-    __slots__ = [
-        "make",
-        "owner",
-        "year"
-    ]
+    # __slots__ = [
+    #     "make",
+    #     "owner",
+    #     "year"
+    # ]
     def __init__(self, make):
         self.make = make
 
 
 c1 = Car("nissan")
 print(c1.make)
+
+c1.color = 'red'
+print(c1.color)

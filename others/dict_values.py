@@ -7,6 +7,9 @@ example_dict = {-1: 10,
                 False: []
                 }
 
+x = frozenset([1,2,3])
+example_dict[x] = "frozen set"
+
 print(example_dict[-1],
 
       example_dict["moo"],
@@ -16,3 +19,5 @@ print(example_dict[-1],
       example_dict[3.4],
 
       example_dict[False])
+
+print(example_dict[x])

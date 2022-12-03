@@ -8,17 +8,25 @@ from storage import Storage
 from memory import Memory
 
 
-mon = Monitor()
-kb = Keyboard()
-mouse = Mouse()
-ct = ComputerTower(
-    Storage(),
-    Memory(),
-    Processor()
-)
-comp = Computer(
-    monitor=mon,
-    computer_tower=ct,
-    keyboard=kb,
-    mouse=mouse
-)
+kb =
+
+
+
+class Activity:
+
+    def __init__(self):
+        self.monitor = Monitor()
+        self.keyboard = Keyboard()
+        self.mouse = Mouse()
+        self.ct = ComputerTower(
+            Storage(),
+            Memory(),
+            Processor()
+        )
+
+        self.comp = Computer(
+            monitor=self.monitor,
+            computer_tower=self.ct,
+            keyboard=self.keyboard,
+            mouse=self.mouse
+        )

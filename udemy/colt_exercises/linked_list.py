@@ -29,11 +29,18 @@ class SinglyLinkedList:
 
         self.length += 1
 
-    def traverse(self):
+    def pop(self):
+        if self.length == 0:
+            return
         current_node = self.head
-        while current_node:
-            print(current_node)
+        new_tail = current_node
+        while current_node.next:
+            new_tail = current_node
             current_node = current_node.next
+        self.tail = new_tail
+        self.tail.next = None
+        self.length -= 1
+        return current_node
 
 
     def __repr__(self):
@@ -42,4 +49,5 @@ class SinglyLinkedList:
 l = SinglyLinkedList()
 l.push("HI")
 l.push("THERE")
-l.traverse()
+print(l.pop())
+print(l)

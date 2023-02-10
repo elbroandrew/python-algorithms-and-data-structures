@@ -8,7 +8,7 @@ class Node:
         self.next = None
 
     def __repr__(self):
-        return f"\n value:{repr(self.val)}, next -> {self.next}"
+        return f"Node:\n value:{repr(self.val)}, next -> {self.next}"
 
 
 """second create an interface called list"""
@@ -29,10 +29,17 @@ class SinglyLinkedList:
 
         self.length += 1
 
+    def traverse(self):
+        current_node = self.head
+        while current_node:
+            print(current_node)
+            current_node = current_node.next
+
+
     def __repr__(self):
         return f"LinkedList: \nhead:{repr(self.head)}, \ntail:{repr(self.tail)}, \nlength:{repr(self.length)}"
 
 l = SinglyLinkedList()
 l.push("HI")
 l.push("THERE")
-print(l)
+l.traverse()

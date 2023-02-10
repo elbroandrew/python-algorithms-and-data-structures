@@ -30,7 +30,7 @@ class SinglyLinkedList:
         self.length += 1
 
     def pop(self):
-        if self.length == 0:
+        if not self.head:
             return
         current_node = self.head
         new_tail = current_node
@@ -40,6 +40,9 @@ class SinglyLinkedList:
         self.tail = new_tail
         self.tail.next = None
         self.length -= 1
+        if self.length == 0:
+            self.head = None
+            self.tail = None
         return current_node
 
 
@@ -48,6 +51,6 @@ class SinglyLinkedList:
 
 l = SinglyLinkedList()
 l.push("HI")
-l.push("THERE")
+print(l)
 print(l.pop())
 print(l)

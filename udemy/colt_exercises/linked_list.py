@@ -45,12 +45,28 @@ class SinglyLinkedList:
             self.tail = None
         return current_node
 
+    def shift(self):
+        if not self.head:
+            return
+
+        old_head = self.head
+        self.head = old_head.next
+        self.length -= 1
+
+        if self.length == 0:
+            self.tail = None
+
+        return old_head
+
 
     def __repr__(self):
         return f"LinkedList: \nhead:{repr(self.head)}, \ntail:{repr(self.tail)}, \nlength:{repr(self.length)}"
 
 l = SinglyLinkedList()
 l.push("HI")
+l.push("WORLD")
 print(l)
-print(l.pop())
+print(l.shift())
+print(l)
+print(l.shift())
 print(l)

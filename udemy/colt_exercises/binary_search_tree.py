@@ -14,6 +14,10 @@ class Node:
         self.left = None
         self.right = None
 
+    def __repr__(self):
+        return f"\n[Node: value:{self.value}, left node -> {self.left}, right node -> {self.right}]"
+
+
 
 class BinarySearchTree:
 
@@ -21,8 +25,43 @@ class BinarySearchTree:
         self.root = None
 
 
+    def insert(self, val):
+        n = Node(val)
+        if not self.root:
+            self.root = n
+            return
+        current_node = self.root
+        while True:
+            # выйти если дубликат
+            if val == current_node.value:
+                return
+            # если значение, которое ищу меньше, то налево
+            if current_node.value > n.value:
+                if current_node.left:
+                    current_node = current_node.left
+                else:
+                    current_node.left = n
+                    return
+            # ищу справа
+            elif current_node.value < n.value:
+                if current_node.right:
+                    current_node = current_node.right
+                else:
+                    current_node.right = n
+                    return
+
+
+    def __str__(self):
+        return f"Binary tree: \nRoot:{self.root}"
+
+
+
+
 tree = BinarySearchTree()
 tree.root = Node(10)
-tree.root.right = Node(15)
-tree.root.left = Node(7)
-tree.root.left.right = Node(8)
+tree.insert(7)
+tree.insert(15)
+tree.insert(11)
+tree.insert(16)
+tree.insert(16)
+print(tree)

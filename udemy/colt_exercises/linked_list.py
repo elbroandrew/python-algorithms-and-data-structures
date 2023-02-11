@@ -1,6 +1,13 @@
 
 """a linked list should have a length, a head and a tail"""
 
+"""
+Big O:
+insert -> O(1)
+get -> O(N)
+remove - depends O(1) or O(N)
+"""
+
 """first create a node"""
 class Node:
     def __init__(self, val):

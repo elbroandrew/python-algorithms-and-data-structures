@@ -127,11 +127,36 @@ class SinglyLinkedList:
 
         return removed_node
 
+    def reverse(self):
+        # swap head and tail
+        current_node = self.head
+        self.head = self.tail
+        self.tail = current_node
+
+        # loop through the list
+        next_node = None
+        prev_node = None
+        while current_node:
+            next_node = current_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+            current_node = next_node
+
+        return self
+
+
 
     def __repr__(self):
         return f"LinkedList: \nhead:{repr(self.head)}, \ntail:{repr(self.tail)}, \nlength:{repr(self.length)}"
 
 l = SinglyLinkedList()
 
-print(l.insert("hi", 0))
+l.insert("hi", 0)
+l.push(1)
+l.push(2)
+l.push(3)
+l.push(4)
+print(l)
+l.reverse()
+print("-----------------")
 print(l)

@@ -37,18 +37,16 @@ class BinarySearchTree:
                 return
             # если значение, которое ищу меньше, то налево
             if current_node.value > n.value:
-                if current_node.left:
-                    current_node = current_node.left
-                else:
+                if not current_node.left:
                     current_node.left = n
                     return
+                current_node = current_node.left
             # ищу справа
             elif current_node.value < n.value:
-                if current_node.right:
-                    current_node = current_node.right
-                else:
+                if not current_node.right:
                     current_node.right = n
                     return
+                current_node = current_node.right
 
 
     def __str__(self):

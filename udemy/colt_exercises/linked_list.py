@@ -58,6 +58,18 @@ class SinglyLinkedList:
 
         return old_head
 
+    def unshift(self, val):
+        n = Node(val)
+        if not self.head:
+            self.head = n
+            self.tail = self.head
+        else:
+            n.next = self.head
+            self.head = n
+
+        self.length += 1
+
+
 
     def __repr__(self):
         return f"LinkedList: \nhead:{repr(self.head)}, \ntail:{repr(self.tail)}, \nlength:{repr(self.length)}"
@@ -66,7 +78,7 @@ l = SinglyLinkedList()
 l.push("HI")
 l.push("WORLD")
 print(l)
-print(l.shift())
+l.unshift(1)
 print(l)
-print(l.shift())
+l.shift()
 print(l)

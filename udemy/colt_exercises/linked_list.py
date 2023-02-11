@@ -71,15 +71,22 @@ class SinglyLinkedList:
 
     def get(self, idx):
         if not self.head:
-            raise ValueError("List is empty.")
+            return None
         if idx < 0 or idx >= self.length:
-            raise IndexError("Index is out of range.")
+            return None
         count = 0
         result = self.head
         while count < idx:
             result = result.next
             count += 1
-        return result.val
+        return result
+
+    def set(self, val, at_index):
+        if x := self.get(at_index):
+            x.val = val
+            return True
+
+        return False
 
 
     def __repr__(self):
@@ -87,4 +94,6 @@ class SinglyLinkedList:
 
 l = SinglyLinkedList()
 l.push(2)
+l.push(4)
+l.set(10, 0)
 print(l.get(0))

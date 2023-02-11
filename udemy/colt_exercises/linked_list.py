@@ -112,6 +112,21 @@ class SinglyLinkedList:
 
         return True
 
+    def remove(self, at_index):
+        if at_index < 0 or at_index >= self.length:
+            return None
+        elif at_index == 0:
+            self.shift()
+        elif at_index == self.length - 1:
+            self.pop()
+        prev_node = self.get(at_index - 1)
+        removed_node = self.get(at_index)
+        removed_node_next = removed_node.next
+        prev_node.next = removed_node_next
+        self.length -= 1
+
+        return removed_node
+
 
     def __repr__(self):
         return f"LinkedList: \nhead:{repr(self.head)}, \ntail:{repr(self.tail)}, \nlength:{repr(self.length)}"

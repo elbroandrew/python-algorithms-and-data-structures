@@ -28,6 +28,7 @@ class SinglyLinkedList:
             self.tail = n
 
         self.length += 1
+        return True
 
     def pop(self):
         if not self.head:
@@ -66,10 +67,11 @@ class SinglyLinkedList:
         else:
             n.next = self.head
             self.head = n
-
         self.length += 1
+        return True
 
     def get(self, idx):
+        """get node"""
         if not self.head:
             return None
         if idx < 0 or idx >= self.length:
@@ -81,7 +83,9 @@ class SinglyLinkedList:
             count += 1
         return result
 
+
     def set(self, val, at_index):
+        """updates a node at the index"""
         if x := self.get(at_index):
             x.val = val
             return True
@@ -89,11 +93,30 @@ class SinglyLinkedList:
         return False
 
 
+    def insert(self, val, idx):
+
+        """inserts a new node"""
+        if idx < 0 or idx > self.length:
+            return False
+        elif idx == self.length:
+            return self.push(val)
+        elif idx == 0:
+            return self.unshift(val)
+
+        new_node = Node(val)
+        prev_node = self.get(idx - 1)
+        prev_node_next = prev_node.next
+        prev_node.next = new_node
+        new_node.next = prev_node_next
+        self.length += 1
+
+        return True
+
+
     def __repr__(self):
         return f"LinkedList: \nhead:{repr(self.head)}, \ntail:{repr(self.tail)}, \nlength:{repr(self.length)}"
 
 l = SinglyLinkedList()
-l.push(2)
-l.push(4)
-l.set(10, 0)
-print(l.get(0))
+
+print(l.insert("hi", 0))
+print(l)

@@ -69,16 +69,22 @@ class SinglyLinkedList:
 
         self.length += 1
 
+    def get(self, idx):
+        if not self.head:
+            raise ValueError("List is empty.")
+        if idx < 0 or idx >= self.length:
+            raise IndexError("Index is out of range.")
+        count = 0
+        result = self.head
+        while count < idx:
+            result = result.next
+            count += 1
+        return result.val
 
 
     def __repr__(self):
         return f"LinkedList: \nhead:{repr(self.head)}, \ntail:{repr(self.tail)}, \nlength:{repr(self.length)}"
 
 l = SinglyLinkedList()
-l.push("HI")
-l.push("WORLD")
-print(l)
-l.unshift(1)
-print(l)
-l.shift()
-print(l)
+l.push(2)
+print(l.get(0))

@@ -48,6 +48,25 @@ class BinarySearchTree:
                     return
                 current_node = current_node.right
 
+    def find(self, val):
+        if not self.root:
+            return None
+        n = Node(val)
+        current_node = self.root
+        while True:
+            if n.value == current_node.value:
+                return current_node.value
+            if current_node.value < n.value:
+                if current_node.right:
+                    current_node = current_node.right
+                else:
+                    return None
+            elif current_node.value > n.value:
+                if current_node.left:
+                    current_node = current_node.left
+                else:
+                    return None
+
 
     def __str__(self):
         return f"Binary tree: \nRoot:{self.root}"
@@ -63,3 +82,5 @@ tree.insert(11)
 tree.insert(16)
 tree.insert(16)
 print(tree)
+print(tree.find(7))
+print(tree.find(8))

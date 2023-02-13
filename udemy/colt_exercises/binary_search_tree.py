@@ -1,4 +1,7 @@
 """
+Insertion O(log n)
+Search O(log n)
+
 BST слева значения меньше, чем родитель
       42
     /   \
@@ -73,14 +76,15 @@ class BinarySearchTree:
 
 
 
+if __name__ == '__main__':
 
-tree = BinarySearchTree()
-tree.root = Node(10)
-tree.insert(7)
-tree.insert(15)
-tree.insert(11)
-tree.insert(16)
-tree.insert(16)
-print(tree)
-print(tree.find(7))
-print(tree.find(8))
+    tree = BinarySearchTree()
+    tree.root = Node(10)
+    tree.insert(7)
+    tree.insert(15)
+    tree.insert(11)
+    tree.insert(16)
+    tree.insert(16)
+    print(tree)
+    print(tree.find(7))
+    print(tree.find(8))

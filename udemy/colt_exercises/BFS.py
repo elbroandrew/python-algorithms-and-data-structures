@@ -1,3 +1,5 @@
+from binary_search_tree import *
+
 """
 С каждого уровня добавляю в список элементы
 ------>   10
@@ -8,8 +10,6 @@
 результат: [10, 4, 20, 2, 6, 33], т.е. слева направо иду по каждому уровню.
 """
 
-import binary_search_tree
-
 """можно создать либо свою очередь, либо использовать список и pop, """
 class Queue:
 
@@ -18,7 +18,10 @@ class Queue:
         self.length = 0
 
     def add(self, val):
-        self._arr.append(val)
+        if self.length == 0:
+            self._arr.append(val)
+        else:
+            self._arr.insert(0, val)
         self.length += 1
 
     def pop(self):
@@ -32,11 +35,35 @@ class Queue:
     def show(self):
         print(f"{[i for i in self._arr]}")
 
+def bsf(bst: BinarySearchTree):
+
+    q = Queue()
+    if not bst.root:
+        return
+    q.add(bst.root)
+    visited = []
+
+    while q.length > 0:
+        v: Node = q.pop()
+        visited.append(v.value)
+        if v.left:
+            q.add(v.left)
+        if v.right:
+            q.add(v.right)
+
+    return visited
+
+
+
 
 
 if __name__ == '__main__':
-    q = Queue()
-    q.add(10)
-    q.add(4)
-    q.add(12)
-    print(q.show())
+    b = BinarySearchTree()
+    b.insert(10)
+    b.insert(6)
+    b.insert(3)
+    b.insert(8)
+    b.insert(15)
+    b.insert(20)
+    b_bsf = bsf(b)
+    print(b_bsf)

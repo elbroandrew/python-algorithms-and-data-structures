@@ -35,7 +35,8 @@ class Queue:
     def show(self):
         print(f"{[i for i in self._arr]}")
 
-def bsf(bst: BinarySearchTree):
+# breadth first search
+def bfs(bst: BinarySearchTree):
 
     q = Queue()
     if not bst.root:
@@ -54,9 +55,6 @@ def bsf(bst: BinarySearchTree):
     return visited
 
 
-
-
-
 if __name__ == '__main__':
     b = BinarySearchTree()
     b.insert(10)
@@ -65,5 +63,5 @@ if __name__ == '__main__':
     b.insert(8)
     b.insert(15)
     b.insert(20)
-    b_bsf = bsf(b)
-    print(b_bsf)
+    b_bfs = bfs(b)
+    print(b_bfs)

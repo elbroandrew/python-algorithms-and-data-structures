@@ -2,6 +2,7 @@ def find_char(A, n):
     res = 0
 
     for val in range(1, n + 1): # +1, т.к. n + 1 не входит в range.
+        # 1 ^ 2 ^ 3 ^ 4 ^ 5 ^ 6 ^ 7 => 0
         res ^= val
 
     for val in A:

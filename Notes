@@ -89,6 +89,9 @@ r - read (no writings) (by default)
 w - write and overwrite
 a - append to the end
 r+ - read and write based on cursor position
+Картинки как бинарный файл открываю: with open('img.jpg', 'wb') as file:
+    file.write(r.content)
+rb - read bytes. wb - write bytes. Далее работаю как с текстовым файлом - читаю по строчке или по несколько.
 
 Чтение CSV.
 reader - строки как листы будут.

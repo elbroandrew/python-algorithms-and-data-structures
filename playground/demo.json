@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "Name": "Player1",
+      "skill": 100,
+      "gold": 9999,
+      "weapon": "sword"
+    },
+    {
+      "Name": "Player2",
+      "skill": 1,
+      "gold": -1000,
+      "weapon": null
+    }
+  ]
+}

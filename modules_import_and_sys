@@ -1,0 +1,34 @@
+When python looks up for a module, he checks:
+1. the same directory
+2. PYTHONPATH
+3. one of the directories configures as part of Python installation
+
+from docs:
+'''
+A list of strings that specifies the search path for modules. Initialized from the environment variable PYTHONPATH, plus an installation-dependent default.
+
+By default, as initialized upon program startup, a potentially unsafe path is prepended to sys.path (before the entries inserted as a result of PYTHONPATH):
+
+python -m module command line: prepend the current working directory.
+
+python script.py command line: prepend the script’s directory. If it’s a symbolic link, resolve symbolic links.
+'''
+
+
+files structure:
+
+outside_dir
+|___inside_dir
+|___mod.py
+
+cd inside_dir
+import mod
+will see error "No module named mod"
+
+then do:
+import sys
+sys.path.append(r'C:\path_to\outside_dir')
+import mod
+-->success!
+
+sys.path --> you will see the outside_dir path in the sys paths.

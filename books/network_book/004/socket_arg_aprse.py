@@ -1,9 +1,22 @@
-import sys, socket, argparse
+import os, sys, socket, argparse, logging
+from constants import LOG_DIR
 
 """
 This script shows how to handle socket errors.
 """
 
+# logging
+logger = logging.getLogger("main")
+logger.setLevel(logging.DEBUG)
+
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+fh = logging.FileHandler(f"{LOG_DIR}/all.log")
+fh.setLevel(logging.DEBUG)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+fh.setFormatter(formatter)
+logger.addHandler(fh)
 
 
 def main():

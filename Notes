@@ -132,6 +132,12 @@ url = (
 )
 print(url) # rthrthwegwegwegewgwewegweg
 
+-------------------
+When I use 'import *' the wildcard * will import everything defined by __all__ list:
+__all__ = ['foo']
+from mod import *
+will import only 'foo' method.
+-------------------
 
 
 

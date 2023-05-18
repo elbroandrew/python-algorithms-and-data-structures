@@ -9,6 +9,7 @@ This script shows how to handle socket errors.
 logger = logging.getLogger("main")
 logger.setLevel(logging.DEBUG)
 
+#FIXME: LOG_DIR path may not be correct.
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
 
@@ -37,4 +38,5 @@ def main():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     except socket.error as e:
-        print()
+        print("Error creating socket: %s" % e)
+        logger.error("Error creating socket: %s" % e, exc_info=True) # exc_info=True means exception text will also be added into the log file.

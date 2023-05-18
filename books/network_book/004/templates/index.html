@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+<h1>SocketIO</h1>
+<button type="submit" id="btn">button</button>
+
+<script>
+let button = document.querySelector("#btn");
+button.addEventListener("click", sendMessage);
+
+const socket = io("http://localhost:5000");
+
+socket.on('connect', () => {
+    socket.send("connected.");
+    console.log(socket.io.engine.transport.name);
+});
+
+socket.on('connect_error', () => {
+    console.log("disconnected.");
+    socket.disconnect();
+});
+
+socket.on('message', (data) => {
+    console.log(data);
+});
+
+function sendMessage(msg) {
+    socket.emit("hello", "World from CLIENT")
+}
+</script>
+
+</body>
+</html>

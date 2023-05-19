@@ -16,7 +16,7 @@ logger.setLevel(logging.DEBUG)
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
 
-fh = logging.FileHandler(f"{LOG_DIR}/all.log")
+fh = logging.FileHandler(f"{LOG_DIR}/all.log", encoding='cp1251')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 fh.setFormatter(formatter)

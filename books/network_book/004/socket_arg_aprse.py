@@ -1,9 +1,12 @@
 import os, sys, socket, argparse, logging
+import locale
 from constants import LOG_DIR
 
 """
 This script shows how to handle socket errors.
 """
+
+locale.setlocale(locale.LC_ALL, "ru")
 
 # logging
 logger = logging.getLogger("main")

@@ -1,8 +1,9 @@
 
-def isPalindrome(s: str) -> bool:
+def is_palindrome(s: str) -> bool:
 
-    skips = ".,/ ;:_-+!?"
-    new_line = ''.join([x for x in s if x not in skips]).lower()
+    s = s.lower()
+    new_line = [x for x in s if x.isalnum()]
+    print(new_line)
     p1 = 0
     p2 = len(new_line) - 1
 
@@ -21,5 +22,5 @@ if __name__ == '__main__':
     test1 = "A man, a plan, a canal: Panama"
     test2 = " "
 
-    assert isPalindrome(test1) == True
-    assert isPalindrome(test2) == True
+    assert is_palindrome(test1) == True
+    assert is_palindrome(test2) == True

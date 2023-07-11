@@ -1,3 +1,5 @@
+## -*- coding: utf-8 -*-
+
 from binary_search_tree import *
 
 
@@ -42,3 +44,31 @@ def dfs_post_order(b:BinarySearchTree):
     return visited
 
 print("POST order solution: %s" % dfs_post_order(t) )  # POST order solution: [3, 8, 6, 20, 15, 10]
+
+"""IN-ORDER SOLUTION"""
+#короче всегда сначала левое поддерево, потом правое. Если нет левого, то сразу записываю родителя и иду в правое"""
+'''
+Пример:
+    10
+   /  \
+  6    12
+ / \     \
+3   5     20
+правое поддерево (12-20) не имеет левой ветки, значит будет 12-20, а не 20-12.
+'''
+
+def dfs_in_order(b:BinarySearchTree):
+    visited = []
+
+    def traverse(node: Node):
+        if node.left:
+            traverse(node.left)
+        visited.append(node.value)  # просто сюда переместили аппенд
+        if node.right:
+            traverse(node.right)
+
+    traverse(b.root)
+
+    return visited
+
+print("IN order solution: %s" % dfs_in_order(t) )  # IN order solution: [3, 8, 6, 20, 15, 10]

@@ -50,6 +50,9 @@ class UndirectedGraph:
     def __init__(self):
         self._adjacency_list = dict()
 
+    @property
+    def root(self):
+        return next(iter(self._adjacency_list))  # returns only FIRST element
 
     def get_vertices(self):
         return self._adjacency_list
@@ -90,16 +93,31 @@ class UndirectedGraph:
 
         self._adjacency_list.pop(vertex)
 
+    def dfs_recursive_traverse(self, start):
+        result = []
+        visited = {}
+
+        def dfs(vertex):
+            if not vertex:
+                return None
+            visited[vertex] = True
+            result.append(vertex)
+            for n in self._adjacency_list[vertex]:
+                if not n in visited.keys():
+                    dfs(n)
+        dfs(start)
+        return result
 
 
+if __name__ == '__main__':
 
-g = UndirectedGraph()
-g.add_vertex("Tokyo")
-g.add_vertex("Dallas")
-g.add_vertex("Aspen")
-print(g.get_vertices())
-g.add_edge("Tokyo", "Dallas")
-print(g.get_vertices())
-g.add_edge("Dallas", "Aspen")
-print(g.get_vertices())
+    g = UndirectedGraph()
+    g.add_vertex("Tokyo")
+    g.add_vertex("Dallas")
+    g.add_vertex("Aspen")
+    print(g.get_vertices())
+    g.add_edge("Tokyo", "Dallas")
+    print(g.get_vertices())
+    g.add_edge("Dallas", "Aspen")
+    print(g.get_vertices())
 

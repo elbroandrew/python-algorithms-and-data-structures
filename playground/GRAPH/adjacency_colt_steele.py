@@ -108,6 +108,23 @@ class UndirectedGraph:
         dfs(start)
         return result
 
+    def dfs_iterative_traverse(self, start):
+        s = [start]  # we will use it like STACK, pop and append methods only
+        visited = {}
+        result = []
+        visited[start] = True
+
+        while s:
+            vertex = s.pop()
+            result.append(vertex)
+
+            for n in self._adjacency_list[vertex]:
+                if not n in visited.keys():
+                    visited[n] = True
+                    s.append(n)
+        return result
+
+
 
 if __name__ == '__main__':
 

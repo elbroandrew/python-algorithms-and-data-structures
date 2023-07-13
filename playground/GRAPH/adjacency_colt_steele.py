@@ -124,6 +124,22 @@ class UndirectedGraph:
                     s.append(n)
         return result
 
+    def bfs(self, start):
+        # using list as queue
+        q = list(start)
+        visited = {start: True}
+        result = []
+
+        while q:
+            v = q.pop(0)
+            result.append(v)
+            for n in self._adjacency_list[v]:
+                if not n in visited.keys():
+                    visited[n] = True
+                    q.append(n)
+
+        return result
+
 
 
 if __name__ == '__main__':

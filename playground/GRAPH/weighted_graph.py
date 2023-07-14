@@ -31,14 +31,44 @@ class WeightedGraph:
         self.adj_list[vertex1].append(dict(node=vertex2, weight=weight))
         self.adj_list[vertex2].append(dict(node=vertex1, weight=weight))
 
+    def dijkstra(self, start, finish):
+        nodes = PriorityQueue()
+        distances = {}
+        previous = {}
+
+        # build initial distances state
+        for vertex in self.adj_list.keys():
+            if vertex == start:
+                distances[vertex] = 0
+                nodes.enqueue(vertex, 0)
+            else:
+                distances[vertex] = float('inf')    # use infinity
+                nodes.enqueue(vertex, float('inf'))
+            previous[vertex] = None
+
+
+
+
 
 def main():
-    q = PriorityQueue()
-    q.enqueue("B", 3)
-    q.enqueue("C", 5)
-    q.enqueue("D", 2)
-    q.enqueue("Q", 20)
-    print(q.values)
+    graph = WeightedGraph()
+    graph.add_vertex("A")
+    graph.add_vertex("B")
+    graph.add_vertex("C")
+    graph.add_vertex("D")
+    graph.add_vertex("E")
+    graph.add_vertex("F")
+
+    graph.add_edge("A", "B", 4)
+    graph.add_edge("A", "C", 2)
+    graph.add_edge("B", "E", 3)
+    graph.add_edge("C", "D", 2)
+    graph.add_edge("C", "F", 4)
+    graph.add_edge("D", "E", 3)
+    graph.add_edge("D", "F", 1)
+    graph.add_edge("E", "F", 1)
+
+    graph.dijkstra("A", "E")
 
 
 if __name__ == '__main__':

@@ -35,6 +35,8 @@ class WeightedGraph:
         nodes = PriorityQueue()
         distances = {}
         previous = {}
+        path = []
+        smallest = None
 
         # build initial distances state
         for vertex in self.adj_list.keys():
@@ -46,7 +48,29 @@ class WeightedGraph:
                 nodes.enqueue(vertex, float('inf'))
             previous[vertex] = None
 
+        # as long as there is sth to visit
+        while nodes.values:
+            smallest = nodes.dequeue()['val']
+            print(smallest)
+            if smallest == finish:
+                # we are done
+                while previous[smallest]:
+                    path.append(smallest)
+                    smallest = previous[smallest]
+                break
+            if smallest or distances[smallest] != float('inf'):
+                for next_node in self.adj_list[smallest]:
+                    # calc distance
+                    candidate = distances[smallest] + next_node['weight']
+                    next_neighbor = next_node['node']
+                    if candidate < distances[next_neighbor]:
+                        # update new smallest distance to neighbor
+                        distances[next_neighbor] = candidate
+                        previous[next_neighbor] = smallest
+                        nodes.enqueue(next_neighbor, candidate)
 
+        path.append(smallest)
+        return [*reversed(path)]
 
 
 
@@ -68,8 +92,8 @@ def main():
     graph.add_edge("D", "F", 1)
     graph.add_edge("E", "F", 1)
 
-    graph.dijkstra("A", "E")
-
+    res = graph.dijkstra("A", "E")
+    print(res)
 
 if __name__ == '__main__':
     main()

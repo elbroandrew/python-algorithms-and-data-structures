@@ -1,9 +1,11 @@
 import json
 import pprint
 import time
+import traceback
 
 
 async def app(scope, receive, send):
+    traceback.print_stack()
     assert scope["type"] == "http"
     pprint.pprint(scope)
 

@@ -1,5 +1,6 @@
 import json
 import pprint
+import time
 
 
 async def app(scope, receive, send):
@@ -20,4 +21,17 @@ async def app(scope, receive, send):
     )
 
 
-# uvicorn main:app
+class TimingMiddleware:
+    """
+    this middleware displays the time that await took
+    """
+    def __init__(self, myapp):
+        self.app = myapp
+
+    async def __call__(self, scope, receive, send):
+        start_time = time.time()
+        await self.app(scope, receive, send)
+        end_time = time.time()
+        print(f"Took {end_time - start_time:.2f} seconds.")
+
+wrapped_application = TimingMiddleware(app)

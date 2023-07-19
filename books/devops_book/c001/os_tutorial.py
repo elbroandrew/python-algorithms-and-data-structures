@@ -10,3 +10,9 @@ os.chmod('text', 0o777)  # using chmod
 p = os.stat("text")
 print(oct(p.st_mode)[-3:])  # 777
 
+# os.path.expandvars && os.path.expanduser
+print(os.path.expanduser("~/.ssh"))  # подставит  '/home/andrew/.ssh' вместо тильды или ~user
+print(os.path.expanduser("~"))
+print(os.environ)
+print(os.path.expandvars("$HOME/.ssh"))  # короче берет из окружения переменную и подставляет ее путь в виде $HOME или ${HOME}
+

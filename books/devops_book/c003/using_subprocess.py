@@ -1,5 +1,11 @@
+#!/usr/bin/python3.9
+
 import subprocess, os
 
+"""
+first make this file executable via chmod
+after that run without 'python3 using_subprocess.py' just './using_subprocess.py'
+"""
 
 cp = subprocess.run(
     ['ls', '-l'],

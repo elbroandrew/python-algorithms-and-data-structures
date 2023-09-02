@@ -21,4 +21,24 @@ def fun2(n: int):
     print(n)
 # output for fun2(3) is: 1 2 3
 
-fun2(3000)
+
+def factorial_with_tail_recursion(n: int):
+
+    def loop(x: int, accumulator: int):
+        if x <= 1:
+            return accumulator
+        else:
+            return loop(x-1, x*accumulator)
+    
+    return loop(n, 1)
+
+#print(factorial_with_tail_recursion(30))
+
+# factorial non tail recursion
+def fact(n: int) -> int:
+    if n <= 0:
+        return 1
+    else:
+        return n * fact(n - 1)
+
+print(fact(100))

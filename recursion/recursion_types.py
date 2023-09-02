@@ -1,4 +1,4 @@
-# tail recursion -- не существует в питоне
+# tail recursion
 # when the recursive call is the last thing done by the function
 
 def fun(n: int):

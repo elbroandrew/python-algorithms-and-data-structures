@@ -14,4 +14,5 @@ def my_method(l1: list, l2: list):
 
 
 res = my_method([1,1,2,3,4, 6], [1, 1, 2, 12, 1, 6, 6, 7, 8]) # [1, 12, 6, 7, 8]
-print(list(res))
+res.sort()
+print(res)

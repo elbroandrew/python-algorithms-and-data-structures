@@ -1,3 +1,5 @@
+import sys
+
 def iterative_fib(n):
     result = [0, 1]
     for i in range(2, n + 1):
@@ -8,7 +10,7 @@ def iterative_fib(n):
     return result[n]
 
 
-res = iterative_fib(7)
+# res = iterative_fib(7)
 
 
 # iterative w/o an array
@@ -26,7 +28,7 @@ def fib_without_array(n):
         b = c
     return c
 
-test = fib_without_array(7)
+# test = fib_without_array(7)
 
 
 # fib colt variant  (~500 MB памяти сожрет при 1000000)
@@ -48,8 +50,16 @@ def fib_gen(max_num):
         yield x
         count += 1
 
-for n in fib_gen(10):
-    print(n)
+# for n in fib_gen(10):
+#     print(n)
 
 
-
+if __name__ == "__main__":
+    
+    # res = sys.getsizeof(iterative_fib(70))   # 32 bytes
+    # res = sys.getsizeof(fib_without_array(70))  # 32 bytes
+    # res = sys.getsizeof(fib_list(70))  # 664 bytes
+    res = sys.getsizeof(x for x in fib_gen(70)) # 112 bytes
+    list_comp = sys.getsizeof([x * 10 for x in range(1000)]) # 8856 bytes
+    gen_exp = sys.getsizeof(x * 10 for x in range(1000))     # 112 bytes
+    print(f"{res} bytes")

@@ -1,10 +1,15 @@
-from collections import OrderedDict, ChainMap
-
-first = OrderedDict({1: 1, 2: 2})
-second = OrderedDict({4: 4, 5: 5})
-chain = ChainMap(first, second)
-print(chain)
-chain[3] = 100
-print(chain)
+from collections import OrderedDict, ChainMap, Counter, defaultdict
 
 
+counter = Counter("hello") # counts elements of sequence
+print(counter)
+counter.update("word")
+print(counter)
+
+print(counter.most_common(3))
+
+dd = defaultdict(int)
+print(dd["ergergq"])
+for char in "hello":
+    dd[char] += 1
+print(dd)

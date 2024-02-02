@@ -1,15 +1,24 @@
-from collections import OrderedDict, ChainMap, Counter, defaultdict
+from collections import deque
+
+# deque вставляет в начало очень быстро,  отличие от списка
+
+q = deque(iterable=[1,2,3,4,5,6,7])
+q.appendleft(100)
+print(q)
+
+q2 = deque([1,2,3,4], maxlen=3)
+print(q2) # 2,3,4
+
+# use maxlen with file to print last 2 strings -- similar to unix "tail" command:
+
+with open("points.csv") as file:
+    a_deque = deque(file, maxlen=2)
+
+for line in a_deque:
+    print(line.rstrip())  # remove '\n'
+
+# дека - потокобезопасна, можно использовать в многопоточных приложениях, например pub/sub паттерн.
 
 
-counter = Counter("hello") # counts elements of sequence
-print(counter)
-counter.update("word")
-print(counter)
 
-print(counter.most_common(3))
 
-dd = defaultdict(int)
-print(dd["ergergq"])
-for char in "hello":
-    dd[char] += 1
-print(dd)

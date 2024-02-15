@@ -1,8 +1,9 @@
 import sys
+import traceback
 
 try:
     import mymodule
 except Exception as e:
-    print(e)
+    print(e.with_traceback(e.__traceback__))
     import sys
-    print("exit")
+    traceback.print_tb(e.__traceback__)

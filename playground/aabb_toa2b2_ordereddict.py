@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import OrderedDict
 
 def shorten_string(data: str):
     
@@ -18,22 +18,23 @@ def shorten_string(data: str):
     if length == 1:
         return f'{data[0]}1'
 
-    res_str = ''
-    c = Counter(data)
-    d = c.most_common()
     
-    res_str = ''.join([str(v) for k in d for v in k])
+    
+    o = OrderedDict(dict.fromkeys(data, 0))
+    
+    for ch in data:
+        o[ch] += 1
+    
+    print(o)
     
 
-    return res_str 
+    return ''.join([f"{k}{v}" for k,v in o.items()])
 
-print(shorten_string('ab'))
+shorten_string("aab")
     
-# 'a a a b b c d d d'
-# 'a a' 
 
 if __name__ == "__main__":
-    pass
+    print(shorten_string('aab'))
 
 
     

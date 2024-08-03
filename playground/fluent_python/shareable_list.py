@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     print(sl)
 
-    # close the shared memory
-    sl.shm.close()
-    # release the shared memory
+    # close the shared memory - for a process
+    sl.shm.close() 
+    # release the shared memory - for all processes
     sl.shm.unlink()

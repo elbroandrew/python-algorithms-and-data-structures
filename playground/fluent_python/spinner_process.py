@@ -8,7 +8,7 @@ def spin(msg: str, done: synchronize.Event) -> None:
     for char in itertools.cycle(r'\|/-'):
         status = f'\r{char} {msg}'
         print(status, end='', flush=True)
-        if done.wait(.1):  # заставляет данный тред ждать 0.1 сек, пока в мейн треде счетчик 3 сек не пройдет и не установится done.set (в True)Б тем самым можно менять скорость анимации спиннера.
+        if done.wait(.1): 
             break
         
     blanks = ' ' * len(status)

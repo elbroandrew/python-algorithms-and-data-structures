@@ -1,7 +1,7 @@
 import click
 import httpx
 from scrapy.selector import Selector
-import asyncio
+
 
 @click.command()
 @click.option('--city', default="komsomolsk-na-amure", help="City to get weather for")
@@ -16,8 +16,8 @@ def weather(city):
   t = selector.xpath('//div[@class="information__content__temperature"]/text()').getall()[1].strip()
   s = selector.xpath('//div[@class="information__content__temperature"]/span/@title').extract()[0]
   
-  print(f"City: {city}, T°: {t}, \nsource: pogoda.mail.ru")
-  print(s)
+  click.echo(f"City: {city}, T°: {t}, \nsource: pogoda.mail.ru")
+  click.echo(s)
   
 
 if __name__ == '__main__':
